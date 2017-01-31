@@ -10,57 +10,64 @@ This project is to achieve similar functionality as SpringFramework for Java
 		- Beans
 		- Simple AOP
 
+# Installation:
+
+	npm install spring
+
+# Usage
+
+	var ctx = require("spring")("path to ApplicationContext.json");
+
+	var myapp = ctx.createInstance("MyBean2");
+
+	myapp.doSomething();
+
 ## ApplicationContext.json
 
 	{
-		application: {
-			name:  "",
-			version: "",
+		"application": {
+			"id":  "myapp",
 
-			import: ["beans/*"], // accepts plain string "beans/*"
+			"version": "",
 
-			beans: {
-				MyBean: {
-					path: "./beans/MyCustomBean",
+			"import": ["beans/*"], // accepts plain string "beans/*"
 
-					constuctor: "MyCustomBean",
-
-					singleton: false
+			"beans": {
+				"MyBean": {
+					"path": "./beans/MyCustomBean"
 				},
 
-				MyBean2: {
-					path: "./beans/MyCustomBean2",
+				"MyBean2": {
+					"path": "./beans/MyCustomBean2",
 
-					constuctor: "MyCustomBean2",
+					"constuctor": "MyStaticConstructor",
 
-					constuctor-arg: ["ref:MyBean"] // accepts plain string "ref:MyBean"
-
-					singleton: false
+					"constuctor-arg": ["ref:MyBean"] // accepts plain string "ref:MyBean"
 				}
 			},
 
-			aop: {
-				aspect: [
+			"aop": {
+				"aspect": [
 					{
-						ref: "MyBean2"
+						"ref": "MyBean2"
 
-						pointcut: {
-							id: "log",
-							expression: "execution(* *.embarkOnQuest(..))",
+						"pointcut": {
+							"id": "log",
+							"expression": "execution(* *.embarkOnQuest(..))",
 						},
 
-						before: {
-							pointcut-ref: "log"
+						"before": {
+							"pointcut-ref": "log"
 						},
 
-						after: {
-							pointcut-ref: "log"
+						"after": {
+							"pointcut-ref": "log"
 						}
 					}
 				]
 			},
 
-			modules: {
+			"modules": {
 
 			}
 		}
@@ -69,11 +76,11 @@ This project is to achieve similar functionality as SpringFramework for Java
 ## <Bean File>.json
 
 	{
-		id: "MyBean3",
+		"id": "MyBean3",
 
-		path: "./beans/MyBean",
+		"path": "./beans/MyBean",
 
-		constructor: "MyBean",
+		"constructor": "MyBean",
 
-		constuctor-arg: "ref:MyBean2"
+		"constuctor-arg": "ref:MyBean2"
 	}
