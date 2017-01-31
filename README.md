@@ -12,13 +12,13 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 # Installation:
 
-	npm install spring
+	npm install springframework
 
 # Usage
 
-	var ctx = require("spring")("path to ApplicationContext.json");
+	var ctx = require("springframework")("path to ApplicationContext.json");
 
-	var myapp = ctx.createInstance("MyBean2");
+	var myapp = ctx.getBean("MyBean2");
 
 	myapp.doSomething();
 
