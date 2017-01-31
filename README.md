@@ -1,0 +1,1 @@
+This project is to achieve similar functionality as SpringFramework for Java
