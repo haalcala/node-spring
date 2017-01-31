@@ -1,6 +1,16 @@
 This project is to achieve similar functionality as SpringFramework for Java
 
-# ApplicationContext.json
+# Project Status
+
+	Under conceptualisation
+
+# Roadmap
+
+	1.0.0
+		- Beans
+		- Simple AOP
+
+## ApplicationContext.json
 
 	{
 		application: {
@@ -56,7 +66,7 @@ This project is to achieve similar functionality as SpringFramework for Java
 		}
 	}
 
-# Bean File
+## <Bean File>.json
 
 	{
 		id: "MyBean3",
