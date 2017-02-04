@@ -44,7 +44,7 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 					"constuctor": "MyStaticConstructor",
 
-					"constuctor-arg": ["ref:MyBean"] // accepts plain string "ref:MyBean"
+					"constuctor_arg": ["ref:MyBean"] // accepts plain string "ref:MyBean"
 				}
 			},
 

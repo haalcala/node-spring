@@ -44,7 +44,7 @@ describe("ClassPathJsonApplicationContext", function() {
 		});
 	});
 
-	describe("#getBean (requires another bean)", function() {
+	describe("#getBean (requires primitive values)", function() {
 		it("should return a bean", function() {
 			var config = {
 				beans: {
@@ -52,7 +52,11 @@ describe("ClassPathJsonApplicationContext", function() {
 						path: "test/beans/MyCustomBean"
 					},
 					MyBean2: {
-						path: "test/beans/MyCustomBean2"
+						path: "test/beans/MyCustomBean2",
+
+						constuctor_args : [
+							"Hello World!!!"
+						]
 					}
 				}
 			};
