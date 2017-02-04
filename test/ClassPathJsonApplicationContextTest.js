@@ -25,7 +25,7 @@ describe("ClassPathJsonApplicationContext", function() {
 		});
 	});
 
-	describe("#getBean", function() {
+	describe("#getBean (simple bean)", function() {
 		it("should return a bean", function() {
 			var config = {
 				beans: {
@@ -41,6 +41,28 @@ describe("ClassPathJsonApplicationContext", function() {
 			assert.equal(ctx instanceof ApplicationContext, true);
 
 			assert.notEqual(ctx.getBean("MyBean"), null);
+		});
+	});
+
+	describe("#getBean (requires another bean)", function() {
+		it("should return a bean", function() {
+			var config = {
+				beans: {
+					MyBean: {
+						path: "test/beans/MyCustomBean"
+					},
+					MyBean2: {
+						path: "test/beans/MyCustomBean2"
+					}
+				}
+			};
+
+			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+
+			assert.notEqual(ctx, null);
+			assert.equal(ctx instanceof ApplicationContext, true);
+
+			assert.notEqual(ctx.getBean("MyBean2"), null);
 		});
 	});
 });
