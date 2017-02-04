@@ -16,7 +16,9 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 # Usage
 
-	var ctx = require("springframework")("path to ApplicationContext.json");
+	var springframework = require("springframework");
+
+	var ctx = new springframework.ClassPathJsonApplicationContext("path to ApplicationContext.json");
 
 	var myapp = ctx.getBean("MyBean2");
 
