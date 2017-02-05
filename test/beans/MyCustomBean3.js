@@ -1,9 +1,16 @@
-var MyCustomBean = require("./MyCustomBean");
+var MyCustomBean = require("../beans/MyCustomBean");
 
-function MyCustomBean2(dependency) {
+function MyCustomBean3(dependency) {
+	console.log("dependency", dependency);
 	if (!(dependency instanceof MyCustomBean)) {
 		throw "Not an instance of MyCustomBean";
 	}
+
+	this.dependency = dependency;
 }
 
-module.exports = MyCustomBean2;
+MyCustomBean3.prototype.getDependency = function() {
+	return this.dependency;
+};
+
+module.exports = MyCustomBean3;
