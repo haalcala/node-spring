@@ -4,10 +4,10 @@ var springframework = require("../");
 
 var ApplicationContext = require("../lib/ApplicationContext");
 
-describe("ClassPathJsonApplicationContext", function() {
-	describe("#ClassPathJsonApplicationContext", function() {
+describe("FileSystemJsonApplicationContext", function() {
+	describe("#FileSystemJsonApplicationContext", function() {
 		it("should return an ApplicationContext", function() {
-			var ctx = new springframework.ClassPathJsonApplicationContext({beans: {}});
+			var ctx = new springframework.FileSystemJsonApplicationContext({beans: {}});
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -16,7 +16,7 @@ describe("ClassPathJsonApplicationContext", function() {
 
 	describe("#getBean", function() {
 		it("should not return a bean", function() {
-			var ctx = new springframework.ClassPathJsonApplicationContext({beans: {}});
+			var ctx = new springframework.FileSystemJsonApplicationContext({beans: {}});
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -35,7 +35,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -59,7 +59,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -101,7 +101,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -134,7 +134,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -170,7 +170,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -213,7 +213,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -268,7 +268,7 @@ describe("ClassPathJsonApplicationContext", function() {
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);

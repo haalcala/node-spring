@@ -1,6 +1,6 @@
 {
-  "name": "node-springframework",
-  "version": "0.1.0",
+  "name": "node-springjs",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {

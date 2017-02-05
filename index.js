@@ -1,3 +1,3 @@
 
-exports.ClassPathJsonApplicationContext = require("./lib/ClassPathJsonApplicationContext");
+exports.FileSystemJsonApplicationContext = require("./lib/FileSystemJsonApplicationContext");
 

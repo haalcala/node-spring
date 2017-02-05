@@ -2,7 +2,7 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 # Project Status
 
-	Under conceptualisation
+	SpringJS-core available
 
 # Roadmap
 
@@ -12,17 +12,19 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 # Installation:
 
-	npm install springframework
+	npm install springjs
 
 # Usage
 
-	var springframework = require("springframework");
+	var springjs = require("springjs");
 
-	var ctx = new springframework.ClassPathJsonApplicationContext("path to ApplicationContext.json");
+	var ctx = new springjs.FileSystemJsonApplicationContext("path to ApplicationContext.json");
 
 	var myapp = ctx.getBean("MyBean2");
 
 	myapp.doSomething();
+
+	// see the test cases for more examples
 
 ## ApplicationContext.json
 
@@ -75,14 +77,3 @@ This project is to achieve similar functionality as SpringFramework for Java
 		}
 	}
 
-## <Bean File>.json
-
-	{
-		"id": "MyBean3",
-
-		"path": "./beans/MyBean",
-
-		"constructor": "MyBean",
-
-		"constuctor-arg": "ref:MyBean2"
-	}

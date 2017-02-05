@@ -27,28 +27,33 @@ describe("AOP", function() {
 							pointcut: {
 								id: "log",
 								expression: "execution(* *.embarkOnQuest(..))",
-								// method: "embarkOnQuest"
 							},
 
 							before: {
-								"pointcut-ref": "log"
+								pointcut_ref: "log",
+								method: "singBeforeQuest"
 							},
 
 							after: {
-								"pointcut-ref": "log"
+								pointcut_ref: "log",
+								method: "singAfterQuest"
 							}
 						}
 					]
 				}
 			};
 
-			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+			var ctx = new springframework.FileSystemJsonApplicationContext(config);
 
 			assert.notEqual(ctx, null);
 
 			var knight = ctx.getBean("knight");
 			var quest = ctx.getBean("quest");
 			var minstrel = ctx.getBean("minstrel");
+
+			knight.embarkOnQuest();
+			knight.addCount();
+			knight.embarkOnQuest();
 		});
 	});
 });
