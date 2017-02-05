@@ -40,7 +40,11 @@ describe("ClassPathJsonApplicationContext", function() {
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
 
-			assert.notEqual(ctx.getBean("MyBean"), null);
+			var myBean = ctx.getBean("MyBean");
+			var MyCustomBean = require("./beans/MyCustomBean");
+
+			assert.notEqual(myBean, null);
+			assert.equal(myBean instanceof MyCustomBean, true);
 		});
 	});
 
@@ -66,7 +70,14 @@ describe("ClassPathJsonApplicationContext", function() {
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
 
-			assert.notEqual(ctx.getBean("MyBean2"), null);
+			var myBean = ctx.getBean("MyBean2");
+			var MyCustomBean = require("./beans/MyCustomBean2");
+
+			assert.notEqual(myBean, null);
+			assert.equal(myBean instanceof MyCustomBean, true);
+			assert.equal(typeof(myBean.getDependency) == "function", true);
+
+			assert.equal(myBean.getDependency(), config.beans.MyBean2.constuctor_args[0]);
 		});
 	});
 });
