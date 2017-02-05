@@ -147,6 +147,54 @@ describe("ClassPathJsonApplicationContext", function() {
 		});
 	});
 
+	describe("#getBean (requires multi referenced bean)", function() {
+		it("should return a bean", function() {
+			var config = {
+				beans: {
+					MyBean: {
+						path: "test/beans/MyCustomBean",
+					},
+					MyBean2: {
+						path: "test/beans/MyCustomBean2",
+
+						constuctor_args: "Hello World!!!! " + new Date()
+					},
+					MyBean3: {
+						path: "test/beans/MyCustomBean4",
+
+						constuctor_args : [
+							"ref:MyBean",
+							"ref:MyBean2"
+						]
+					}
+				}
+			};
+
+			var ctx = new springframework.ClassPathJsonApplicationContext(config);
+
+			assert.notEqual(ctx, null);
+			assert.equal(ctx instanceof ApplicationContext, true);
+
+			var myBean = ctx.getBean("MyBean");
+			var myBean2 = ctx.getBean("MyBean2");
+			var myBean3 = ctx.getBean("MyBean3");
+			var MyCustomBean = require("./beans/MyCustomBean");
+			var MyCustomBean2 = require("./beans/MyCustomBean2");
+			var MyCustomBean3 = require("./beans/MyCustomBean4");
+
+			assert.notEqual(myBean, null);
+			assert.notEqual(myBean2, null);
+			assert.notEqual(myBean3, null);
+
+			assert.equal(myBean instanceof MyCustomBean, true);
+			assert.equal(myBean2 instanceof MyCustomBean2, true);
+			assert.equal(myBean3 instanceof MyCustomBean3, true);
+
+			assert.equal(myBean3.getDependency() instanceof MyCustomBean, true);
+			assert.equal(myBean3.getDependency2() instanceof MyCustomBean2, true);
+		});
+	});
+
 	describe("#getBean (requires singleton bean)", function() {
 		it("should return a bean", function() {
 			var config = {
@@ -256,6 +304,4 @@ describe("ClassPathJsonApplicationContext", function() {
 			assert.equal(myBean3.getDependency().optional, config.beans.MyBean.constuctor_args);
 		});
 	});
-
-
 });
