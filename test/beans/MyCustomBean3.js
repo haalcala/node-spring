@@ -1,4 +1,4 @@
-var MyCustomBean = require("../beans/MyCustomBean");
+var MyCustomBean = require("./MyCustomBean");
 
 function MyCustomBean3(dependency) {
 	console.log("dependency", dependency);

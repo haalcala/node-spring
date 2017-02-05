@@ -244,10 +244,10 @@ describe("ClassPathJsonApplicationContext", function() {
 			assert.equal(myBean2 instanceof MyCustomBean, true);
 
 			var myBean3 = ctx.getBean("MyBean2");
-			var MyCustomBean = require("./beans/MyCustomBean3");
+			var MyCustomBean3 = require("./beans/MyCustomBean3");
 
 			assert.notEqual(myBean3, null);
-			assert.equal(myBean3 instanceof MyCustomBean, true);
+			assert.equal(myBean3 instanceof MyCustomBean3, true);
 
 			assert.equal(myBean3.getDependency() === myBean, true);
 
