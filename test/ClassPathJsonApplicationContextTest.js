@@ -7,7 +7,7 @@ var ApplicationContext = require("../lib/ApplicationContext");
 describe("ClassPathJsonApplicationContext", function() {
 	describe("#ClassPathJsonApplicationContext", function() {
 		it("should return an ApplicationContext", function() {
-			var ctx = new springframework.ClassPathJsonApplicationContext({});
+			var ctx = new springframework.ClassPathJsonApplicationContext({beans: {}});
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
@@ -16,7 +16,7 @@ describe("ClassPathJsonApplicationContext", function() {
 
 	describe("#getBean", function() {
 		it("should not return a bean", function() {
-			var ctx = new springframework.ClassPathJsonApplicationContext({});
+			var ctx = new springframework.ClassPathJsonApplicationContext({beans: {}});
 
 			assert.notEqual(ctx, null);
 			assert.equal(ctx instanceof ApplicationContext, true);
