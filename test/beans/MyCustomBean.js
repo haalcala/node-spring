@@ -1,5 +1,7 @@
-function MyCustomBean() {
+function MyCustomBean(optional) {
 	console.log("MyCustomBean");
+
+	this.optional = optional;
 
 	this.count = 0;
 }
