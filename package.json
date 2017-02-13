@@ -1,8 +1,23 @@
 {
   "name": "springjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
+  "keywords": [
+    "java",
+    "beans",
+    "aop",
+    "aspect",
+    "di",
+    "dependency",
+    "injection",
+    "spring",
+    "springframework",
+    "pointcut",
+    "enterprise",
+    "architecture",
+    "modular"
+  ],
   "scripts": {
     "test": "make test"
   },

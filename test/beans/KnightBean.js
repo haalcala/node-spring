@@ -1,9 +1,15 @@
 function KnightBean(optional) {
+	var $ = this;
+
 	console.log("KnightBean");
 
 	this.optional = optional;
 
 	this.count = 0;
+
+	setInterval(function() {
+		$.embarkOnQuest();
+	}, 500);
 }
 
 KnightBean.prototype.addCount = function() {

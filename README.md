@@ -9,6 +9,8 @@ This project is to achieve similar functionality as SpringFramework for Java
 	1.0.0
 		- Beans
 		- Simple AOP
+	1.1.0
+		- Remoting
 
 # Installation:
 
