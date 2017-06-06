@@ -1,5 +1,5 @@
 function MistrelBean(optional) {
-	console.log("MistrelBean");
+	console.log("new MistrelBean");
 
 	this.optional = optional;
 

@@ -4,7 +4,7 @@ function MyCustomBean2(dependency) {
 	this.dependency = dependency;
 
 	if (!dependency) {
-		throw "Missing required parameter dependency";
+		throw new Error("Missing required parameter dependency");
 	}
 }
 

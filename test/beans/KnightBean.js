@@ -1,7 +1,7 @@
 function KnightBean(optional) {
 	var $ = this;
 
-	console.log("KnightBean");
+	console.log("new KnightBean");
 
 	this.optional = optional;
 

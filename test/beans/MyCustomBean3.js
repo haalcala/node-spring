@@ -3,7 +3,7 @@ var MyCustomBean = require("./MyCustomBean");
 function MyCustomBean3(dependency) {
 	console.log("dependency", dependency);
 	if (!(dependency instanceof MyCustomBean)) {
-		throw "Not an instance of MyCustomBean";
+		throw new Error("Not an instance of MyCustomBean");
 	}
 
 	this.dependency = dependency;

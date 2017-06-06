@@ -94,7 +94,7 @@ describe("FileSystemJsonApplicationContext", function() {
 					MyBean2: {
 						path: "test/beans/MyCustomBean2",
 
-						constuctor_args : [
+						constructor_args : [
 							"Hello World!!! " + new Date()
 						]
 					}
@@ -113,7 +113,7 @@ describe("FileSystemJsonApplicationContext", function() {
 			assert.equal(myBean instanceof MyCustomBean, true);
 			assert.equal(typeof(myBean.getDependency) == "function", true);
 
-			assert.equal(myBean.getDependency(), config.beans.MyBean2.constuctor_args[0]);
+			assert.equal(myBean.getDependency(), config.beans.MyBean2.constructor_args[0]);
 		});
 	});
 
@@ -127,7 +127,7 @@ describe("FileSystemJsonApplicationContext", function() {
 					MyBean2: {
 						path: "test/beans/MyCustomBean3",
 
-						constuctor_args : [
+						constructor_args : [
 							"ref:MyBean"
 						]
 					}
@@ -157,12 +157,12 @@ describe("FileSystemJsonApplicationContext", function() {
 					MyBean2: {
 						path: "test/beans/MyCustomBean2",
 
-						constuctor_args: "Hello World!!!! " + new Date()
+						constructor_args: "Hello World!!!! " + new Date()
 					},
 					MyBean3: {
 						path: "test/beans/MyCustomBean4",
 
-						constuctor_args : [
+						constructor_args : [
 							"ref:MyBean",
 							"ref:MyBean2"
 						]
@@ -206,7 +206,7 @@ describe("FileSystemJsonApplicationContext", function() {
 					MyBean2: {
 						path: "test/beans/MyCustomBean3",
 
-						constuctor_args : [
+						constructor_args : [
 							"ref:MyBean"
 						]
 					}
@@ -248,7 +248,7 @@ describe("FileSystemJsonApplicationContext", function() {
 		});
 	});
 
-	describe("#getBean (requires singleton bean with constuctor_args)", function() {
+	describe("#getBean (requires singleton bean with constructor_args)", function() {
 		it("should return a bean", function() {
 			var config = {
 				beans: {
@@ -256,12 +256,12 @@ describe("FileSystemJsonApplicationContext", function() {
 						path: "test/beans/MyCustomBean",
 						singleton: true,
 
-						constuctor_args: "Hello World!!!! " + new Date()
+						constructor_args: "Hello World!!!! " + new Date()
 					},
 					MyBean2: {
 						path: "test/beans/MyCustomBean3",
 
-						constuctor_args : [
+						constructor_args : [
 							"ref:MyBean"
 						]
 					}
@@ -301,7 +301,7 @@ describe("FileSystemJsonApplicationContext", function() {
 
 			assert.equal(myBean3.getDependency().count, initial_count + 1);
 
-			assert.equal(myBean3.getDependency().optional, config.beans.MyBean.constuctor_args);
+			assert.equal(myBean3.getDependency().optional, config.beans.MyBean.constructor_args);
 		});
 	});
 });
