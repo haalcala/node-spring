@@ -1,6 +1,6 @@
 {
   "name": "springjs",
-  "version": "1.1.9",
+  "version": "1.1.11",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -34,9 +34,9 @@
     "mocha": "^3.4.2"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "promise": "^7.1.1",
     "underscore": "^1.8.3"
   }
 }

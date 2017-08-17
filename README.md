@@ -14,22 +14,27 @@ This project is to achieve similar functionality as SpringFramework for Java
 
 # Installation:
 
-	npm install springjs
+```bash
+npm install springjs
+```
 
 # Usage
 
-	var springjs = require("springjs");
+```js
+var springjs = require("springjs");
 
-	var ctx = new springjs.FileSystemJsonApplicationContext("path to ApplicationContext.json");
+var ctx = new springjs.FileSystemJsonApplicationContext("path to ApplicationContext.json");
 
-	var myapp = ctx.getBean("MyBean2");
+var myapp = ctx.getBean("MyBean2");
 
-	myapp.doSomething();
+myapp.doSomething();
 
-	// see the test cases for more examples
+// see the test cases for more examples
+```
 
 ## ApplicationContext.json
 
+```js
 	{
 		"application": {
 			"id":  "myapp",
@@ -78,4 +83,4 @@ This project is to achieve similar functionality as SpringFramework for Java
 			}
 		}
 	}
-
+```
