@@ -1,5 +1,5 @@
 function QuestBean(optional) {
-	console.log("QuestBean");
+	console.log("new QuestBean");
 
 	this.optional = optional;
 

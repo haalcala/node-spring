@@ -5,11 +5,11 @@ function MyCustomBean4(dependency, dependency2) {
 	console.log("dependency", dependency);
 
 	if (!(dependency instanceof MyCustomBean)) {
-		throw "Not an instance of MyCustomBean";
+		throw new Error("Not an instance of MyCustomBean");
 	}
 
 	if (!(dependency2 instanceof MyCustomBean2)) {
-		throw "Not an instance of MyCustomBean2";
+		throw new Error("Not an instance of MyCustomBean2");
 	}
 
 	this.dependency = dependency;
